@@ -5,7 +5,7 @@ var shape = {
     }
 }
 
-function Triagle(a,b,c){
+function Triangle(a,b,c){
 
     this.a = a;
     this.b = b;
@@ -14,15 +14,17 @@ function Triagle(a,b,c){
 
 
 
-Triagle.prototype = shape; 
+// Triangle.prototype = shape; 
 
-Triagle.prototype.getPerimeter = function () {
+Object.assign(Triangle.prototype,shape);
+
+Triangle.prototype.getPerimeter = function () {
     return this.a+this.b+this.c;
 }
 
-let t = new Triagle(3,4,5); 
+let t = new Triangle(3,4,5); 
 
-t.constructor = Triagle
+t.constructor = Triangle
 
 console.log(t);
 
